@@ -6,13 +6,13 @@
         $(this).closest('li').addClass('active');
         var $anchor = $(this);
         var nav = $($anchor.attr('href'));
-        if (nav.length) {
+        //if (nav.length) {
         	$('html, body').stop().animate({				
             	scrollTop: $($anchor.attr('href')).offset().top - 30				
         	}, 1000, 'easeInOutExpo');
         
-        event.preventDefault();
-        }
+        	event.preventDefault();
+        //}
     });
        
 

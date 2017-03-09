@@ -13,6 +13,14 @@ h1
 {
 	font-size: 36px;
 }
+.opening {
+	color: #6b2737;
+	text-decoration: underline;
+}
+.opening:hover {
+	color: #6b2737;
+	text-decoration: none;
+}
 /**************************************
 Header
 **************************************/
@@ -449,6 +457,13 @@ margin-top: 5px;
     background: url('../img/backtop.jpg') no-repeat;
     background-size: cover;
     min-height: 500px;
+}
+#banner-job
+{
+    background: url('../img/backtop.jpg') no-repeat;
+    background-size: cover;
+    height: 275px;
+	
 }
 .cta2 .btn-default,.cta2 .btn-default:hover,.cta2 .btn-default:focus
 {
