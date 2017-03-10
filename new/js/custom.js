@@ -12,7 +12,18 @@
         
         	event.preventDefault();
         }
-
+	});
+	
+	$(document).ready(function() {
+		var spot = $(window.location.hash);
+		console.log(spot);
+		
+		if (spot.length) {
+			console.log('working');
+			$('html, body').stop().animate({
+				scrollTop: spot.offset().top - 30
+			})
+		}
 	});
 	
 	$(window).scroll(function(event) {
@@ -20,13 +31,12 @@
 		var activeSection = $('#homeBan');
 		
 		var scrollLoc = parseInt($('body').scrollTop());
-		var scrollServices = parseInt($('#service').offset().top - 30);
-		var scrollPortfolio = parseInt($('#portfolio').offset().top - 30);
-		var scrollTeam = parseInt($('#about').offset().top - 30);
-		var scrollContact = parseInt($('#contact').offset().top - 30);
+		var scrollServices = parseInt($('#service').offset().top - 60);
+		var scrollPortfolio = parseInt($('#portfolio').offset().top - 60);
+		var scrollTeam = parseInt($('#about').offset().top - 60);
+		var scrollContact = parseInt($('#contact').offset().top - 60);
 		
 		if (scrollLoc >= scrollServices) {
-			console.log('working');
 			activeSection = $('#serviceNav');
 		}
 		
