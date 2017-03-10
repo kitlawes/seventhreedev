@@ -1,7 +1,6 @@
 (function ($) {
     
     // Navigation scrolls
-		
 	$('.navbar-nav li a').bind('click', function(event) {
         var $anchor = $(this);
         var nav = $($anchor.attr('href'));
@@ -55,6 +54,23 @@
 		activeSection.addClass('active');
 	});
        
+	// Portfolio item display
+	$('.filimg').click(function(e) {
+		if ($(this).hasClass('featuredPort')) {
+			$(this).removeClass('featuredPort');
+			$('.filimg').removeClass('lesserPort');
+			$(this).next().addClass('portTextHide');
+		} else {
+			$('.filimg').removeClass('featuredPort').addClass('lesserPort');
+			$(this).removeClass('lesserPort').addClass('featuredPort');
+			$(this).next().removeClass('portTextHide');
+		};
+	});
+	
+	$('.filter').click(function(e) {
+		$('.filimg').removeClass('lesserPort featuredPort');
+		$('.filimg').next().addClass('portTextHide');
+	});
 
     // Instantiate MixItUp:
     $('#Container').mixItUp();
