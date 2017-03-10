@@ -176,6 +176,9 @@ a.btn-banner:hover, a.btn-banner:focus
 {
     background-color: #5D576B;
 }
+.bgred-actual {
+	background-color: orangered;
+}
 .wrk-title
 {
     cursor: pointer;
