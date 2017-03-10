@@ -1,19 +1,49 @@
 (function ($) {
     
     // Navigation scrolls
-    $('.navbar-nav li a').bind('click', function(event) {
-        $('.navbar-nav li').removeClass('active');
-        $(this).closest('li').addClass('active');
+		
+	$('.navbar-nav li a').bind('click', function(event) {
         var $anchor = $(this);
         var nav = $($anchor.attr('href'));
-        //if (nav.length) {
+        if (nav.length) {
         	$('html, body').stop().animate({				
             	scrollTop: $($anchor.attr('href')).offset().top - 30				
         	}, 1000, 'easeInOutExpo');
         
         	event.preventDefault();
-        //}
-    });
+        }
+
+	});
+	
+	$(window).scroll(function(event) {
+		$('.navbar-nav li').removeClass('active');
+		var activeSection = $('#homeBan');
+		
+		var scrollLoc = parseInt($('body').scrollTop());
+		var scrollServices = parseInt($('#service').offset().top - 30);
+		var scrollPortfolio = parseInt($('#portfolio').offset().top - 30);
+		var scrollTeam = parseInt($('#about').offset().top - 30);
+		var scrollContact = parseInt($('#contact').offset().top - 30);
+		
+		if (scrollLoc >= scrollServices) {
+			console.log('working');
+			activeSection = $('#serviceNav');
+		}
+		
+		if (scrollLoc >= scrollPortfolio) {
+			activeSection = $('#portfolioNav');
+		}
+		
+		if (scrollLoc >= scrollTeam) {
+			activeSection = $('#aboutNav');
+		}
+		
+		if (scrollLoc >= scrollContact) {
+			activeSection = $('#contactNav');
+		}
+		
+		activeSection.addClass('active');
+	});
        
 
     // Instantiate MixItUp:
