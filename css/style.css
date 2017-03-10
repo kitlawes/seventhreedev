@@ -169,6 +169,9 @@ a.btn-banner:hover, a.btn-banner:focus
 {
     background-color: #3498DB;
 }
+.bgpurple {
+	background-color: rebeccapurple;
+}
 .bgred
 {
     background-color: #5D576B;
