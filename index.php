@@ -307,12 +307,15 @@
 										<p>Thank you for your interest in SevenThree Dev! We will review your inquiry and respond as soon as we can.
 										<br><br>
 											-The SevenThree Dev Team
+										<br><br>".$email."
 										</p>
 									</body>
 								</html>";
+							$us_email = "lauren@seventhreedev.co";
                             if(filter_var($email,FILTER_VALIDATE_EMAIL)) {
-                                mail("lauren@seventhreedev.co",$subject." Inquiry from Website","Message from ".$firstName." ".$lastName .", ".$tel." at ".$email." is as follows:\n".$comment."\n\n".$site." ".$hosting);
 								mail($email,"Message received!",$message,$headers);
+
+								mail($us_email,$subject." Inquiry from Website","Message from ".$firstName." ".$lastName .", ".$tel." at ".$email." is as follows:\n".$comment."\n\n".$site." ".$hosting);
                             } else {
                                 echo "Please enter a valid email address.";
                             }
