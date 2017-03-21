@@ -4,7 +4,9 @@
 	<title>SevenThree Dev</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Raleway:600,300' rel='stylesheet' type='text/css'>
@@ -310,7 +312,6 @@
 								</html>";
                             if(filter_var($email,FILTER_VALIDATE_EMAIL)) {
                                 mail("lauren@seventhreedev.co",$subject." Inquiry from Website","Message from ".$firstName." ".$lastName .", ".$tel." at ".$email." is as follows:\n".$comment."\n\n".$site." ".$hosting);
-                                echo "Thank you for your message!";
 								mail($email,"Message received!",$message,$headers);
                             } else {
                                 echo "Please enter a valid email address.";
@@ -328,7 +329,7 @@
 								<div class="col-md-4 inputGroupContainer">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+										<input  name="first_name" placeholder="First Name" class="form-control"  type="text" id="first-name">
 							    	</div>
 							  </div>
 							</div>
@@ -340,7 +341,7 @@
 							    <div class="col-md-4 inputGroupContainer">
 							    <div class="input-group">
 							  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+							  <input name="last_name" placeholder="Last Name" class="form-control"  type="text" id="last-name">
 							    </div>
 							  </div>
 							</div>
@@ -351,7 +352,7 @@
 							    <div class="col-md-4 inputGroupContainer">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-							  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+							  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" id="email">
 							    </div>
 							  </div>
 							</div>
@@ -364,7 +365,7 @@
 							    <div class="col-md-4 inputGroupContainer">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-							  <input name="tel" placeholder="(540)555-1212" class="form-control" type="text">
+							  		<input name="tel" placeholder="(540)555-1212" class="form-control" type="text" id="phone">
 							    </div>
 							  </div>
 							</div>
@@ -375,7 +376,7 @@
 							   <div class="col-md-4 inputGroupContainer">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-							  		<input name="website" placeholder="Website or domain name" class="form-control" type="text">
+							  		<input name="website" placeholder="Website or domain name" class="form-control" type="text" id="site">
 							    </div>
 							  </div>
 							</div>
@@ -403,13 +404,13 @@
 					    		<div class="col-md-4 inputGroupContainer">
 					    			<div class="input-group">
 					        			<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					        			<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+					        			<textarea class="form-control" name="comment" placeholder="Project Description" id="message"></textarea>
 					  				</div>
 					  			</div>
 							</div>
 
 							<!-- Success message -->
-							<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+							<div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
 							<!-- Button -->
 							<div class="form-group">
@@ -463,6 +464,7 @@
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 	<script type="text/javascript" src="js/contactForm.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
 	
 	<script>
   		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

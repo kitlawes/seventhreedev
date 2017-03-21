@@ -15,7 +15,6 @@
 	
 	$(document).ready(function() {
 		var spot = $(window.location.hash);
-		console.log(spot);
 		
 		if (spot.length) {
 			console.log('working');

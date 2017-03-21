@@ -102,7 +102,14 @@
         })
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                alert("Reset reached");
                 $('#contact_form').data('bootstrapValidator').resetForm();
+                $('#first-name').val('');
+                $('#last-name').val('');
+                $('#email').val('');
+                $('#phone').val('');
+                $('#site').val('');
+                $('#message').val('');
 
             // Prevent form submission
             e.preventDefault();
