@@ -278,29 +278,151 @@
 				</div>
                 <!--<div id="sendmessage">Your message has been sent. Thank you!</div>
                 <div id="errormessage"></div>-->
-                <a href="mailto:lauren@seventhreedev.co" class="btn button-medium" id="contact-submit">Email Us</a>
-				<!--<div class="form-sec">
-                	<form action="" method="post" role="form" class="contactForm">
-                    	<div class="col-md-4 form-group">
-                            <input type="text" name="name" class="form-control text-field-box" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <input type="email" class="form-control text-field-box" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <input type="text" class="form-control text-field-box" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <textarea class="form-control text-field-box" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                            <div class="validation"></div>
-            
-                            <button class="button-medium" id="contact-submit" type="submit" name="contact">Submit Now</button>
-                        </div>
-                    </form>
-                </div>-->
+                
+				<?php
+                    if(isset($_GET['mode'])) {
+                        $mode=$_GET['mode'];
+                        if($mode=="send") {
+                            $firstName=$_POST['first_name'];
+                            $lastName=$_POST['last_name'];
+                            $email=$_POST['email'];
+                            $tel=$_POST['tel'];
+                            $site=$_POST['website'];
+                            $hosting=$_POST['hosting'];
+                            $comment=$_POST['comment'];
+							$headers = "MIME-Version: 1.0" . "\r\n";
+							$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+							// More headers
+							$headers .= 'From: <noreply@seventhreedev.co>' . "\r\n";
+							$message = "
+								<html>
+									<head>
+										<title>Message received!</title>
+									</head>
+									<body>
+										<h2>Thank you for your message!</h2>
+										<p>Thank you for your interest in SevenThree Dev! We will review your inquiry and respond as soon as we can.
+										<br><br>
+											-The SevenThree Dev Team
+										</p>
+									</body>
+								</html>";
+                            if(filter_var($email,FILTER_VALIDATE_EMAIL)) {
+                                mail("lauren@seventhreedev.co",$subject." Inquiry from Website","Message from ".$firstName." ".$lastName .", ".$tel." at ".$email." is as follows:\n".$comment."\n\n".$site." ".$hosting);
+                                echo "Thank you for your message!";
+								mail($email,"Message received!",$message,$headers);
+                            } else {
+                                echo "Please enter a valid email address.";
+                            }
+                        }
+                    }
+                ?>
+				<div class="container">
+					<form class="well form-horizontal" action="index.php?mode=send" method="post"  id="contact_form">
+						<fieldset>
+
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label">First Name</label>  
+								<div class="col-md-4 inputGroupContainer">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+										<input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+							    	</div>
+							  </div>
+							</div>
+
+							<!-- Text input-->
+
+							<div class="form-group">
+							  <label class="col-md-4 control-label" >Last Name</label> 
+							    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+							    </div>
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							       <div class="form-group">
+							  <label class="col-md-4 control-label">E-Mail</label>  
+							    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+							    </div>
+							  </div>
+							</div>
+
+
+							<!-- Text input-->
+							       
+							<div class="form-group">
+							  <label class="col-md-4 control-label">Phone #</label>  
+							    <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							  <input name="tel" placeholder="(540)555-1212" class="form-control" type="text">
+							    </div>
+							  </div>
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group">
+							  <label class="col-md-4 control-label">Website or domain name</label>  
+							   <div class="col-md-4 inputGroupContainer">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+							  		<input name="website" placeholder="Website or domain name" class="form-control" type="text">
+							    </div>
+							  </div>
+							</div>
+
+							<!-- radio checks -->
+							 <div class="form-group">
+                        		<label class="col-md-4 control-label">Do you have hosting?</label>
+                        		<div class="col-md-4">
+                            		<div class="radio">
+                                		<label>
+                                    		<input type="radio" name="hosting" value="yes" /> Yes
+                                		</label>
+                            		</div>
+                            		<div class="radio">
+                                		<label>
+                                    		<input type="radio" name="hosting" value="no" /> No
+                                		</label>
+                            		</div>
+                        		</div>
+                    		</div>
+
+							<!-- Text area -->
+							<div class="form-group">
+					  			<label class="col-md-4 control-label">Project Description</label>
+					    		<div class="col-md-4 inputGroupContainer">
+					    			<div class="input-group">
+					        			<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+					        			<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+					  				</div>
+					  			</div>
+							</div>
+
+							<!-- Success message -->
+							<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+							<!-- Button -->
+							<div class="form-group">
+					  			<label class="col-md-4 control-label"></label>
+					  			<div class="col-md-4">
+					   				<input type="submit" class="btn btn-warning">
+					  			</div>
+							</div>
+
+						</fieldset>
+					</form>
+				</div>
+    		</div>
 			</div>
 		</div>
 	</div>
@@ -340,6 +462,7 @@
   	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/contactForm.js"></script>
 	
 	<script>
   		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

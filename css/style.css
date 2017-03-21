@@ -609,6 +609,9 @@ p.cta-sub-title {
 #contact-submit {
     padding-bottom: 55px;
 }
+#success_message {
+    display: none;
+}
 /**************************************
 form element
 **************************************/
