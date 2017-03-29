@@ -20,24 +20,24 @@
 	<div class="main-navigation navbar-fixed-top">
 		<nav class="navbar navbar-default">
 			<div class="container">
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-			  </button>
-			  
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-			  <ul class="nav navbar-nav navbar-right">
-			    <li class="active" id="homeBan"><a href="#banner">Home</a></li>
-			    <li id="serviceNav"><a href="#service">Services</a></li>
-			    <li id="portfolioNav"><a href="#portfolio">Portfolio</a></li>
-			    <li id="aboutNav"><a href="#about">Our Team</a></li>
-				<li id="jobs"><a href="jobs.html">Jobs</a></li>
-			    <li id="contactNav"><a href="#contact">Contact Us</a></li>
-			  </ul>
-			</div>
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+				  
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav navbar-right">
+				    <li class="active" id="homeBan"><a href="#banner">Home</a></li>
+				    <li id="serviceNav"><a href="#service">Services</a></li>
+				    <li id="portfolioNav"><a href="#portfolio">Portfolio</a></li>
+				    <li id="aboutNav"><a href="#about">Our Team</a></li>
+					<li id="jobs"><a href="jobs.html">Jobs</a></li>
+				    <li id="contactNav"><a href="#contact">Contact Us</a></li>
+				  </ul>
+				</div>
 		  </div>
 		</nav>
 	</div>
@@ -479,5 +479,8 @@
   		ga('send', 'pageview');
 	</script>
     
+    <!-- Start of HubSpot Embed Code -->
+  	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3038408.js"></script>
+	<!-- End of HubSpot Embed Code -->
 </body>
 </html>
