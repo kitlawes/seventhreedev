@@ -105,7 +105,7 @@
 
 
 				<div class="col-md-4 sign-up-box">
-					<form class="well form-horizontal" action="is-it-time-to-update-your-website.php?mode=send" method="post">
+					<form class="well form-horizontal" action="is-it-time-to-update-your-website.php?mode=send" method="post" id="contact-form">
 					<p>Get the latest content straight to your inbox!</p>
 					<div class="row">
 					  <div class="col-lg-12">
@@ -184,6 +184,8 @@
   	<script src="js/jquery.mixitup.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/contactForm.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
 
 	<!-- Start of HubSpot Embed Code -->
   	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3038408.js"></script>
