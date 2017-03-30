@@ -87,18 +87,37 @@
 					<h3>The final verdict</h3>
 					<p>Technology is changing at a rapid pace, and the web is no exception. Keeping your site current, easy to use, and with relevant information can help to increase customers and sales. And if any of these bullet points hit close to home, you might want to think about a refresh.</p>
 				</div>
+
+				<?php
+                    if(isset($_GET['mode'])) {
+                        $mode=$_GET['mode'];
+                        if($mode=="send") {
+                            $email=$_POST['email'];
+
+                            if(filter_var($email,FILTER_VALIDATE_EMAIL)) {
+								mail('lauren@seventhreedev.co',"Add to email list",$email);
+                            } else {
+                                echo "Please enter a valid email address.";
+                            }
+                        }
+                    }
+                ?>
+
+
 				<div class="col-md-4 sign-up-box">
+					<form class="well form-horizontal" action="is-it-time-to-update-your-website.php?mode=send" method="post">
 					<p>Get the latest content straight to your inbox!</p>
 					<div class="row">
 					  <div class="col-lg-12">
 					    <div class="input-group">
-					      <input type="text" class="form-control" placeholder="Email address">
+					      <input type="text" class="form-control" placeholder="Email address" name="email">
 					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button">Sign up!</button>
+					        <button class="btn btn-default" type="submit">Sign up!</button>
 					      </span>
 					    </div><!-- /input-group -->
 					  </div><!-- /.col-lg-12 -->
 					</div><!-- /.row -->
+					</form>
 				</div>
 			</div>
 		</div>
