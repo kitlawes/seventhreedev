@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html lang="en" class="js no-touch">
 <head>
-	<title>SevenThree Dev | Small Business Software Solutions</title>
+	<title>SevenThree Dev | Web and App Development</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,6 +37,7 @@
 				    <li id="portfolioNav"><a href="#portfolio">Portfolio</a></li>
 				    <li id="aboutNav"><a href="#about">Our Team</a></li>
 					<li id="jobs"><a href="jobs.html">Jobs</a></li>
+					<li id="blog"><a href="blog.html">Blog</a></li>
 				    <li id="contactNav"><a href="#contact">Contact Us</a></li>
 				  </ul>
 				</div>
@@ -102,7 +103,15 @@
 	<!--CTA1 START-->
 	<div class="cta-1">
 		<div class="container">
-			<div class="row text-center white">
+			<div class="row white">
+				<div class="col-md-7">
+					<h3>See the latest blog post:</h3>
+					<h1>Is it Time to Update Your Website?</h1>
+				</div>
+				<div class="col-md-5">
+					<p>Just like your home, a website is a personal entity that has to be nourished, updated, and looked after. From hiring a web designer (or getting on Wix) to making your website available online, every step requires effort, time, and money.</p>
+					<a href="is-it-time-to-update-your-website.php">Keep reading</a>
+				</div>
 			</div>
 		</div>
 	</div>

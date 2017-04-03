@@ -1,9 +1,12 @@
  <!DOCTYPE html>
 <html lang="en" class="js no-touch">
 <head>
-  <title>Is it Time to Update Your Website? | SevenThree Dev</title>
+  <title>Is it Time to Update Your Website? | SevenThree Dev | Web and App Development</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta description="Software solutions for local small businesses, including website and mobile app services.">
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
@@ -186,6 +189,16 @@
 	<script type="text/javascript" src="js/custom.js"></script>
 	<script type="text/javascript" src="js/contactForm.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  		ga('create', 'UA-93490822-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
 
 	<!-- Start of HubSpot Embed Code -->
   	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3038408.js"></script>
