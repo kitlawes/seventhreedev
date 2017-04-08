@@ -46,7 +46,7 @@ Header
     padding-top: 5px;
 }
 
-.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li > a:hover
 {
 	border-bottom: 2px solid #5D576B;
     outline: none;

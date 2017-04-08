@@ -28,7 +28,7 @@
 		$('.navbar-nav li').removeClass('active');
 		var activeSection = $('#homeBan');
 		
-		var scrollLoc = parseInt($('body').scrollTop());
+		var scrollLoc = window.scrollY;
 		var scrollServices = parseInt($('#service').offset().top - 60);
 		var scrollPortfolio = parseInt($('#portfolio').offset().top - 60);
 		var scrollTeam = parseInt($('#about').offset().top - 60);
